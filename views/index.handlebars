@@ -8,7 +8,7 @@
             <h2>To be eaten!</h2>
             <ul>
                 {{#each burgers}}
-                {{#unless eaten}}
+                {{#unless devoured}}
                 {{> burger-block devour=false}}
                 {{/unless}}
                 {{/each}}
@@ -19,7 +19,7 @@
             <h2>Eaten!</h2>
             <ul>
                 {{#each burgers}}
-                {{#if eaten}}
+                {{#if devoured}}
                 {{> burger-block devour=true}}
                 {{/if}}
                 {{/each}}
