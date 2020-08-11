@@ -1,5 +1,5 @@
 // Import Node Dependencies
-var connection = require("./config/connection.js");
+const connection = require("./config/connection.js");
 
 // Connect to MySQL database
 connection.connect(function (err) {
@@ -31,7 +31,6 @@ const orm = {
       {
         burger_name: burger_name,
         devoured: false,
-        date: timestamp,
       },
       function (err, result) {
         if (err) throw err;
