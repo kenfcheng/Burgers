@@ -20,5 +20,5 @@ const burgers = {
   },
 };
 
-// Export the database
+// Export to burger_controllers.js
 module.exports = burgers;

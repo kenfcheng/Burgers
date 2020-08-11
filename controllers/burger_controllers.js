@@ -2,10 +2,9 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
 const burgers = require("../models/burgers.js");
 
-// Create all our routes and set up logic within those routes where required.
+// Create all our routes
 router.get("/", function (req, res) {
   burgers.all(function (data) {
     let hbsObject = {
@@ -18,13 +17,15 @@ router.get("/", function (req, res) {
 
 router.post("/api/burgers", function (req, res) {
   console.log(res.body);
-  burgers.create(["name", "eaten"], [req.body.name, req.body.eaten], function (
-    result
-  ) {
-    console.log(result);
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
+  burgers.create(
+    ["name", "devoured"],
+    [req.body.name, req.body.devoured],
+    function (result) {
+      console.log(result);
+
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
 router.put("/api/burgers/:id", function (req, res) {
@@ -34,12 +35,12 @@ router.put("/api/burgers/:id", function (req, res) {
 
   burgers.update(
     {
-      eaten: req.body.eaten,
+      devoured: req.body.devoured,
     },
     condition,
     function (result) {
       if (result.changedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
+        // 404 Error
         return res.status(404).end();
       }
       res.status(200).end();
@@ -47,5 +48,5 @@ router.put("/api/burgers/:id", function (req, res) {
   );
 });
 
-// Export routes for server.js to use.
+// Exports to server.js
 module.exports = router;
