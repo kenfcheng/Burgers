@@ -1,3 +1,4 @@
+
 INSERT INTO burgers
     (name, devoured)
 VALUES
@@ -5,4 +6,4 @@ VALUES
     ("Gordon Hamsay", false),
     ("Sweet Home Avocado", false ),
     ("Don't You Four Cheddah 'Bout Me", true);
-,
+
