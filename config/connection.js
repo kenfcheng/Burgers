@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const connection = require("./models/burgers.js");
+const connection = require("models/burgers.js");
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
