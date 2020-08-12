@@ -1,5 +1,5 @@
 // Import Node Dependencies
-const connection = require("./config/connection.js");
+const connection = require("../config/connection.js");
 
 // Connect to MySQL database
 connection.connect(function (err) {

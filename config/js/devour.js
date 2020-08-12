@@ -3,7 +3,7 @@ $(function () {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newBurger = {
+    const newBurger = {
       name: $("#burger").val().trim(),
       eaten: "0",
     };
@@ -21,10 +21,10 @@ $(function () {
   });
 
   $(".eat").on("click", function (event) {
-    var id = $(this).data("id");
-    var newEaten = $(this).data("neweaten") === false;
+    let id = $(this).data("id");
+    let newEaten = $(this).data("neweaten") === false;
 
-    var newEatenState = {
+    const newEatenState = {
       eaten: newEaten,
     };
     console.log("id:" + id);
