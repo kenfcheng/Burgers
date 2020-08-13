@@ -1,9 +1,8 @@
 $(function () {
   $(".create-form").on("submit", function (event) {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    const newBurger = {
+    var newBurger = {
       name: $("#burger").val().trim(),
       eaten: "0",
     };
@@ -15,16 +14,16 @@ $(function () {
       data: newBurger,
     }).then(function () {
       console.log("created new burger");
-      // Reload the page to get the updated list
+
       location.reload();
     });
   });
 
   $(".eat").on("click", function (event) {
-    let id = $(this).data("id");
-    let newEaten = $(this).data("neweaten") === false;
+    var id = $(this).data("id");
+    var newEaten = $(this).data("neweaten") === false;
 
-    const newEatenState = {
+    var newEatenState = {
       eaten: newEaten,
     };
     console.log("id:" + id);
@@ -36,7 +35,7 @@ $(function () {
       data: newEatenState,
     }).then(function () {
       console.log("changed eaten state to", newEaten);
-      // Reload the page to get the updated list
+
       location.reload();
     });
   });

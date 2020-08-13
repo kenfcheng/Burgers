@@ -1,6 +1,6 @@
 
 INSERT INTO burgers
-    (name, devoured)
+    (name, eaten)
 VALUES
     ("Ah Ah Ah Ah Stay'n A-Chive", true),
     ("Gordon Hamsay", false),

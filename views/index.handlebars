@@ -1,14 +1,15 @@
 <div class="container">
-    <img class="img-fluid" src="https://www.foodandhealth.com/images/clipart/Burger.jpg">
+    <img class="img-fluid"
+        src="https://hips.hearstapps.com/del.h-cdn.co/assets/17/22/1496164974-delish-veggie-burgers-2.jpg">
 
-    <h1>Eat The Burger</h1>
+    <h1>Eat-Da-Burger</h1>
 
     <div class="row">
         <div class="col-4">
             <h2>To be eaten!</h2>
             <ul>
                 {{#each burgers}}
-                {{#unless devoured}}
+                {{#unless eaten}}
                 {{> burger-block devour=false}}
                 {{/unless}}
                 {{/each}}
@@ -19,7 +20,7 @@
             <h2>Eaten!</h2>
             <ul>
                 {{#each burgers}}
-                {{#if devoured}}
+                {{#if eaten}}
                 {{> burger-block devour=true}}
                 {{/if}}
                 {{/each}}
