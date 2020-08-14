@@ -2,7 +2,7 @@ $(function () {
   $(".create-form").on("submit", function (event) {
     event.preventDefault();
 
-    var newBurger = {
+    const newBurger = {
       name: $("#burger").val().trim(),
       eaten: "0",
     };
@@ -20,10 +20,10 @@ $(function () {
   });
 
   $(".eat").on("click", function (event) {
-    var id = $(this).data("id");
-    var newEaten = $(this).data("neweaten") === false;
+    const id = $(this).data("id");
+    const newEaten = $(this).data("neweaten") === false;
 
-    var newEatenState = {
+    const newEatenState = {
       eaten: newEaten,
     };
     console.log("id:" + id);
